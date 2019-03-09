@@ -15,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
-                <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                <input asp-for="DeskQuote.CustomerName" class="form-control" AutoPostBack="true" OnTextChanged="TextBox1_TextChanged" />
                 <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,17 +56,19 @@
                     <option value="3">Rush 3</option>
                     <option value="5">Rush 5</option>
                     <option value="7">Rush 7</option>
-                    
+
                 </select>
                 <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            
+           
+            @*<div class="form-group">
                 <label asp-for="DeskQuote.QuoteAmount" class="control-label"></label>
-                <input asp-for="DeskQuote.QuoteAmount" class="form-control" />
+                <input asp-for="DeskQuote.QuoteAmount" class="form-control" id="total" readonly />
                 <span asp-validation-for="DeskQuote.QuoteAmount" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -79,3 +81,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

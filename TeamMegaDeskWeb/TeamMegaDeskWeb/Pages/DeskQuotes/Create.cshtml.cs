@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TeamMegaDeskWeb.Models;
+using System.Web;
 
 namespace TeamMegaDeskWeb.Pages.DeskQuotes
 {
@@ -32,11 +33,20 @@ namespace TeamMegaDeskWeb.Pages.DeskQuotes
             {
                 return Page();
             }
-
+           
+            QuoteMath math1 = new QuoteMath();
+            DeskQuote.QuoteAmount = math1.DeskQuote1(DeskQuote.CustomerName, DeskQuote.Width, DeskQuote.Depth, DeskQuote.Drawers, DeskQuote.Material, DeskQuote.RushDays);
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+            
+            
+
         }
+
+        
     }
+
+        
 }

@@ -40,6 +40,8 @@ namespace TeamMegaDeskWeb.Pages.DeskQuotes
 
         public async Task<IActionResult> OnPostAsync()
         {
+            QuoteMath math1 = new QuoteMath();
+            DeskQuote.QuoteAmount = math1.DeskQuote1(DeskQuote.CustomerName, DeskQuote.Width, DeskQuote.Depth, DeskQuote.Drawers, DeskQuote.Material, DeskQuote.RushDays);
             if (!ModelState.IsValid)
             {
                 return Page();

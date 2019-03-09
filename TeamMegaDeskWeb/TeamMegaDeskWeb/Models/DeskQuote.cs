@@ -28,7 +28,7 @@ namespace TeamMegaDeskWeb.Models
         [Required]
         public int RushDays { get; set; }
         [Display(Name = "Total")]
-        [Required]
+       
         public decimal QuoteAmount { get; set; }
     }
 }
